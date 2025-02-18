@@ -3,6 +3,10 @@
 /*int multiply(int a, int b) {
     return multiply(a,b,1,1);
 }*/
+
+using namespace topolino;
+using pippo::multiply;
+
 int main() {
-    std::cout << pippo::multiply(3,4);
+    std::cout << pluto::multiply(3,4);
 }
