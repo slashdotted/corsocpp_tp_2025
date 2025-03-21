@@ -13,6 +13,11 @@ public: // by default using struct (private: is the default using class)
     void numerator(int v);
     int denominator() const;
     void denominator(int v);
+
+    //void increaseBy(const Fraction& f);
+    Fraction& operator+=(const Fraction& f);
+    //Fraction operator+(const Fraction& f);
+
     // inline by default
     void print() const {
         std::cout << numerator() << "/" << denominator() << std::endl;

@@ -44,6 +44,22 @@ void Fraction::denominator(int v)
     d = v;
 }
 
+//void Fraction::increaseBy(const Fraction &f)
+Fraction& Fraction::operator+=(const Fraction& f)
+{
+    d = d * f.d;
+    n = n * f.d;
+    n = n + (f.n * d);
+    return *this;
+}
+
+/*Fraction Fraction::operator+(const Fraction &f)
+{
+    auto z{f};
+    z += *this;
+    return z;
+}*/
+
 /*void Fraction::print() {
     cout << this->n << "/" << this->d << endl;
 }*/
