@@ -7,7 +7,7 @@ struct Animal
         , m_sound{sound}
     {}
 
-    virtual void makeSound() const { std::cout << "Animal " << m_name << '\n'; }
+    virtual void makeSound() const = 0; // pure virtual
 
 private:
     std::string m_name;
@@ -23,7 +23,7 @@ struct Dog : public Animal
     void makeSound() const override
     {
         std::cout << "I'm a dog... I'm an ";
-        Animal::makeSound();
+        //Animal::makeSound();
     }
 };
 
@@ -36,7 +36,7 @@ struct Cat : public Animal
     void makeSound() const override
     {
         std::cout << "I'm a cat... I'm an ";
-        Animal::makeSound();
+        //Animal::makeSound();
     }
 };
 
@@ -50,26 +50,26 @@ void printAnimalSound(const Animal &animal)
     animal.makeSound();
 }
 
-void printAnimalSound2(Animal animal)
+/*void printAnimalSound2(Animal animal)
 {
     animal.makeSound();
-}
+}*/
 
 int main()
 {
-    Animal spaturno{"Giobbe", "#!*çç*ç"};
+    //Animal spaturno{"Giobbe", "#!*çç*ç"};
     Dog dog{"Laika"};
     Cat cat{"Tom"};
-    printAnimalSound(&spaturno);
+    //printAnimalSound(&spaturno);
     printAnimalSound(&dog);
     printAnimalSound(&cat);
 
-    printAnimalSound(spaturno);
+    //printAnimalSound(spaturno);
     printAnimalSound(dog);
     printAnimalSound(cat);
 
-    printAnimalSound2(spaturno);
-    printAnimalSound2(dog);
-    printAnimalSound2(cat);
+    //printAnimalSound2(spaturno);
+    //printAnimalSound2(dog);
+    //printAnimalSound2(cat);
     return 0;
 }
