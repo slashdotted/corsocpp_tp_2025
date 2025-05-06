@@ -1,8 +1,10 @@
 #ifndef LECTURERRESEARCHER_H
 #define LECTURERRESEARCHER_H
+#include "Lecturer.h"
+#include "Researcher.h"
 #include <string>
 
-class LecturerResearcher
+class LecturerResearcher : public Lecturer, public Researcher
 {
 public:
     LecturerResearcher(std::string name,
@@ -14,6 +16,8 @@ public:
                        double researchpercentage);
 
     double researchpercentage() const;
+
+    std::string classname() const override;
 
 protected:
     double m_researchpercentage;

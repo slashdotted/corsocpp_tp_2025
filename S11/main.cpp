@@ -1,10 +1,8 @@
 #include "Employee.h"
 #include "Lecturer.h"
+#include "LecturerResearcher.h"
 #include "Researcher.h"
 #include <iostream>
-
-struct Pinguino
-{};
 
 void foo(Employee *e)
 {
@@ -26,21 +24,22 @@ int main()
     Employee e{"John", "ISIN", 1};
     Lecturer l{"Alice", "ISEA", 2, "Tecnica digitale", "Elettronica"};
     Researcher r{"Andrea", "ISIN", 3, "Computer vision"};
-    Pinguino p;
-    //foo(&p);
+    LecturerResearcher lr{"Luca", "ISTEPS", 4, "Gestionale", "Industry 4.0", "Machines", 0.5};
+    std::cout << lr.name() << " : " << lr.researchpercentage() << '\n';
+    lr.Lecturer::foo();
 
-    std::cout << "==== Employee ====\n";
-    foo(&e);
-    foo(e);
-    baz(e);
+    foo(lr);
+    Lecturer *lp{&l};
+    Employee *ep{lp};
+    std::cout << "lp=" << lp << ", ep=" << ep << std::endl;
 
-    std::cout << "==== Lecturer ====\n";
-    foo(&l);
-    foo(l);
-    baz(l);
-
-    std::cout << "==== Researcher ====\n";
-    foo(&r);
-    foo(r);
-    baz(r);
+    Lecturer *lp2{&lr};   // upcasting
+    Researcher *rp2{&lr}; // upcasting
+    auto l2{static_cast<LecturerResearcher *>(lp2)};
+    //auto r2{static_cast<Researcher *>(lp2)};
+    auto l3{static_cast<LecturerResearcher *>(&r)};
+    std::cout << l3->researcharea() << std::endl;
+    std::cout << l3->studies() << std::endl;
+    //Employee *e2{&lr};
+    //auto lr3{static_cast<LecturerResearcher *>(e2)};
 }

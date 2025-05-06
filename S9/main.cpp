@@ -29,6 +29,10 @@ int main()
     Pinguino p;
     //foo(&p);
 
+    Lecturer *lp{&l};
+    Employee *ep{lp};
+    std::cout << "lp=" << lp << ", ep=" << ep << std::endl;
+
     std::cout << "==== Employee ====\n";
     foo(&e);
     foo(e);

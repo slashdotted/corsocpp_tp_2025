@@ -3,7 +3,7 @@
 #include "Employee.h"
 #include <string>
 
-struct Lecturer : public Employee
+struct Lecturer : public virtual Employee
 {
     Lecturer(const std::string &n,
              const std::string &i,
@@ -14,6 +14,8 @@ struct Lecturer : public Employee
     std::string course() const;
     std::string studies() const;
     std::string classname() const override;
+
+    void foo() {}
 
 private:
     std::string m_course;
