@@ -18,6 +18,5 @@ int main()
     BaseB *b_reinterpret = reinterpret_cast<BaseB *>(&d); // Does not adjust the pointer
     std::cout << "&d=" << &d << '\n';
     std::cout << "b_cstyle=" << b_cstyle << '\n';
-    std::cout << "b_reinterpret=" << b_reinterpret << '\
-n';
+    std::cout << "b_reinterpret=" << b_reinterpret << '\n';
 }

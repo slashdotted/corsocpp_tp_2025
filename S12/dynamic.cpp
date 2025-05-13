@@ -31,16 +31,20 @@ int main()
 
     {
         // dyamic cast cannot convert values (types)
-        // Bar x{dynamic_cast<Bar>(baz)}; // Invalid cast
+        //Bar x{dynamic_cast<Bar>(baz)}; // Invalid cast
     }
     {
         // dynamic_cast will return nullptr if the cast is invalid
         // Baz *x{dynamic_cast<Baz *>(&paz)}; // Invalid cast, returns nullptr
         Baz *y{dynamic_cast<Baz *>(&raz)};
-        if (y) {
+        if (y != nullptr) {
             std::cout << "Successfully cast Raz* to Baz*\n";
         } else {
             std::cout << "Failed to cast Raz* to Baz*\n";
+        }
+        // Emulating: &raz instanceof Baz*
+        if (dynamic_cast<Baz *>(&raz)) {
+            // ...
         }
 
         Paz *z{dynamic_cast<Paz *>(y)};

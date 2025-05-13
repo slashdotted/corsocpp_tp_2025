@@ -33,7 +33,7 @@ int main() {
         //Baz *x{static_cast<Baz *>(&paz)}; // <--- Invalid cast
         // ...even when this is legit
         Baz *y{static_cast<Baz *>(&raz)};
-        // Paz *z{static_cast<Paz *>(y)};// <--- Invalid cast
+        //Paz *z{static_cast<Paz *>(y)};// <--- Invalid cast
     }
 
     // *******************************
@@ -43,6 +43,8 @@ int main() {
     {
         // Static cast can convert values (types)
         Bar x{static_cast<Bar>(baz)};
+        // equivalent to
+        Bar x2 = baz;
         // ...and recognize (some) invalid casts
         // Biz y{static_cast<Biz>(baz)}; // <--- Invalid cast
     }
@@ -50,8 +52,10 @@ int main() {
     {
         // We can also cast pointers
         Bar *x{static_cast<Bar *>(&baz)};
+        Bar *x2 = &baz;
         // Or references
         Bar &y{static_cast<Bar &>(baz)};
+        Bar &y2{baz};
     }
     {
         // Static cast CANNOT remove const

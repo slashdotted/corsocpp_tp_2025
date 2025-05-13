@@ -13,7 +13,9 @@ int main()
     // Base* bc = reintepret_cast<Base*>(b); // Not permitted
     // Base* bc = dynamic_cast<Base*>(b); // Not permitted
     // Base ncb{const_cast<Base>(*b)}; // Converting values is not allowed
-    Base *bc = const_cast<Base *>(b); // Ok
-    bc->bar();                        // Ok
+    Base *bc = const_cast<Base *>(b);   // Ok
+    Base &bcr = const_cast<Base &>(*b); // Ok
+    bc->bar();                          // Ok
+    bcr.bar();                          // Ok
     delete b;
 }
