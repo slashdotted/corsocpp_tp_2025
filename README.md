@@ -16,6 +16,6 @@
 - Saper sviluppare applicazioni utilizzando le funzionalità offerte dalle più recenti versioni dello standard C++
 - Saper utilizzare un framework a eventi per sviluppare applicazioni C++ multipiattaforma con interfaccia grafica
 
-Wiki: [https://github.com/slashdotted/corsocpp_tp_2025/wiki](https://github.com/slashdotted/corsocpp_tp_2025/wiki)
+Wiki: [https://github.com/slashdotted/corsocpp_pap_2024/wiki](https://github.com/slashdotted/corsocpp_pap_2024/wiki)
 
 Homepage del corso [https://www.icorsi.ch/course/view.php?id=20651](https://www.icorsi.ch/course/view.php?id=20651)
